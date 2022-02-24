@@ -1,0 +1,13 @@
+D:\Projects\C#\TryToLearn\Dibla\Dibla\bin\Debug\netcoreapp3.1\Dibla.exe
+D:\Projects\C#\TryToLearn\Dibla\Dibla\bin\Debug\netcoreapp3.1\Dibla.deps.json
+D:\Projects\C#\TryToLearn\Dibla\Dibla\bin\Debug\netcoreapp3.1\Dibla.runtimeconfig.json
+D:\Projects\C#\TryToLearn\Dibla\Dibla\bin\Debug\netcoreapp3.1\Dibla.runtimeconfig.dev.json
+D:\Projects\C#\TryToLearn\Dibla\Dibla\bin\Debug\netcoreapp3.1\Dibla.dll
+D:\Projects\C#\TryToLearn\Dibla\Dibla\bin\Debug\netcoreapp3.1\Dibla.pdb
+D:\Projects\C#\TryToLearn\Dibla\Dibla\obj\Debug\netcoreapp3.1\Dibla.csprojAssemblyReference.cache
+D:\Projects\C#\TryToLearn\Dibla\Dibla\obj\Debug\netcoreapp3.1\Dibla.AssemblyInfoInputs.cache
+D:\Projects\C#\TryToLearn\Dibla\Dibla\obj\Debug\netcoreapp3.1\Dibla.AssemblyInfo.cs
+D:\Projects\C#\TryToLearn\Dibla\Dibla\obj\Debug\netcoreapp3.1\Dibla.csproj.CoreCompileInputs.cache
+D:\Projects\C#\TryToLearn\Dibla\Dibla\obj\Debug\netcoreapp3.1\Dibla.dll
+D:\Projects\C#\TryToLearn\Dibla\Dibla\obj\Debug\netcoreapp3.1\Dibla.pdb
+D:\Projects\C#\TryToLearn\Dibla\Dibla\obj\Debug\netcoreapp3.1\Dibla.genruntimeconfig.cache
