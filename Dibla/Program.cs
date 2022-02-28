@@ -202,6 +202,7 @@ namespace Dibla
         }
         static void Main(string[] args)
         {
+            string[] character;
             int otvet;
             string Side = "";
             string Class;
@@ -248,7 +249,13 @@ namespace Dibla
                     Console.WriteLine("Character {0} has been created", Name);
                     break;
                 case 2:
-                    Console.WriteLine("2");
+                    Console.WriteLine("Write your character's name: ");
+                    Name = Console.ReadLine();
+                    filename = Name + ".txt";
+                    StreamReader sr = new StreamReader(filename);
+                    string line = sr.ReadLine();
+                    character = line.Split(' ');
+                    sr.Close();
                     break;
                 case 3:
                     Console.WriteLine("3");
