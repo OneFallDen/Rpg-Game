@@ -9,8 +9,7 @@ namespace Dibla
         {
             Console.WriteLine("1.New Game");
             Console.WriteLine("2.Continue");
-            Console.WriteLine("3.Select Hero");
-            Console.WriteLine("4.Сhoose difficulty");
+            Console.WriteLine("3.Delete character");
         }
         static int selectAction(int i, int y)
         {
@@ -47,6 +46,13 @@ namespace Dibla
         }
         class CreatingHero
         {
+            public static void difficulty()
+            {
+                Console.WriteLine("Choose difficulty");
+                Console.WriteLine("1.Default");
+                Console.WriteLine("2.Exspert");
+                Console.WriteLine("3.Master");
+            }
             public static void chooseSide()
             {
                 Console.WriteLine("Choose your side:");
@@ -203,6 +209,7 @@ namespace Dibla
         static void Main(string[] args)
         {
             string[] character;
+            string difficulty;
             int otvet;
             string Side = "";
             string Class;
@@ -242,9 +249,26 @@ namespace Dibla
                     Class = RaceClass[1];
                     Console.Write("Enter yours character name: ");
                     Name = Console.ReadLine();
+                    CreatingHero.difficulty();
+                    otvet = selectAction(1, 3);
+                    switch (otvet)
+                    {
+                        case 1:
+                            difficulty = "Default";
+                            break;
+                        case 2:
+                            difficulty = "Exspert";
+                            break;
+                        case 3:
+                            difficulty = "Master";
+                            break;
+                        default:
+                            difficulty = "";
+                            break;
+                    }
                     string filename = Name + ".txt";
                     StreamWriter sw = new StreamWriter(filename);
-                    sw.WriteLine(Name + " " + Side + " " + Race + " " + Class);
+                    sw.WriteLine(Name + " " + Side + " " + Race + " " + Class + difficulty);
                     sw.Close();
                     Console.WriteLine("Character {0} has been created", Name);
                     break;
@@ -259,9 +283,6 @@ namespace Dibla
                     break;
                 case 3:
                     Console.WriteLine("3");
-                    break;
-                case 4:
-                    Console.WriteLine("4");
                     break;
             }
         }
