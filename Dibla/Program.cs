@@ -208,11 +208,60 @@ namespace Dibla
         }
         class StartGame
         {
+            // Name, Side, Race, Class, Difficulty, location
+            static void saveGame(string[] character)
+            {
+                string filename = character[0] + ".txt";
+                StreamWriter sw = new StreamWriter(filename);
+                sw.WriteLine(character[0] + " " + character[1] + " " + character[2] + " " + character[3] + " " + character[4] + " " + character[5]);
+                sw.Close();
+            }
+            static string quit(string location)
+            {
+                location = location + ".quit";
+                return location;
+            }
+            static string aroundactions(string location, string[] towns)
+            {
+                bool flag = false;
+                string x = "";
+                int otvet;
+                int lenght = towns.Length;
+
+                while (true)
+                {
+                    aroundLoc();
+                    otvet = selectAction(0, 0);
+                    switch (otvet)
+                    {
+                        case 0:
+                            x = location;
+                            break;
+                    }
+                    for (int i = 0; i < lenght; i++)
+                    {
+                        if (x == towns[i])
+                        {
+                            flag = true;
+                            break;
+                        }
+                    }
+                    if (flag == true)
+                    {
+                        break;
+                    }
+                }
+                return location;
+            }
+            static void aroundLoc()
+            {
+                Console.WriteLine("0.Exit");
+            }
             static string Kelindorf(string[] KelindorfAround, string location)
             {
                 int otvet, x;
                 city();
-                otvet = selectAction(1, 6);
+                otvet = selectAction(0, 6);
                 switch (otvet)
                 {
                     case 1:
@@ -238,6 +287,9 @@ namespace Dibla
                                 break;
                         }
                         break;
+                    case 0:
+                        location = quit(location);
+                        break;
                 }
                 return location;
             }
@@ -246,7 +298,7 @@ namespace Dibla
                 int lenght = aroundLocations.Length;
                 for (int i = 0; i < lenght; i++)
                 {
-                    Console.WriteLine("{0}.{1}", (i+1), aroundLocations[i]);
+                    Console.WriteLine("{0}.{1}", (i + 1), aroundLocations[i]);
                 }
                 return lenght;
             }
@@ -258,9 +310,12 @@ namespace Dibla
                 Console.WriteLine("4.Merchant");
                 Console.WriteLine("5.Guild");
                 Console.WriteLine("6.Gates");
+                Console.WriteLine("0.Save game and quit");
             }
             public static void startGame(string[] character)
             {
+                bool quitGame = false;
+                string[] towns = { "Kelindorf" };
                 string location = character[5];
                 int otvet;
                 int x;
@@ -277,6 +332,26 @@ namespace Dibla
                         case "Kelindorf":
                             location = Kelindorf(KelindorfAround, location);
                             break;
+                        case "Kel's forest":
+                            location = aroundactions("Kelindorf", towns);
+                            break;
+                        case "Abondoned caves":
+                            location = aroundactions("Kelindorf", towns);
+                            break;
+
+                        case "Merkland":
+                            break;
+                    }
+                    switch (location)
+                    {
+                        case "Kelindorf.quit":
+                            quitGame = true;
+                            break;
+                    }
+                    if (quitGame == true)
+                    {
+                        saveGame(character);
+                        break;
                     }
                 }
             }
