@@ -206,6 +206,17 @@ namespace Dibla
                 return itog;
             }
         }
+        class StartGame
+        {
+            public static void startGame(string[] character) { 
+                
+            }
+        }
+        static void yesno()
+        {
+            Console.WriteLine("1.Yes");
+            Console.WriteLine("2.No");
+        }
         static void Main(string[] args)
         {
             string[] character;
@@ -268,9 +279,23 @@ namespace Dibla
                     }
                     string filename = Name + ".txt";
                     StreamWriter sw = new StreamWriter(filename);
-                    sw.WriteLine(Name + " " + Side + " " + Race + " " + Class + difficulty);
+                    sw.WriteLine(Name + " " + Side + " " + Race + " " + Class + " " + difficulty);
                     sw.Close();
                     Console.WriteLine("Character {0} has been created", Name);
+                    StreamReader sr1 = new StreamReader(filename);
+                    string line1 = sr1.ReadLine();
+                    character = line1.Split(' ');
+                    sr1.Close();\
+                    Console.WriteLine("Start game?");
+                    yesno();
+                    otvet = selectAction(1,2);
+                    switch (otvet) {
+                        case 1:
+                            StartGame.startGame(character);
+                            break;
+                        case 2:
+                            break;
+                    }
                     break;
                 case 2:
                     Console.WriteLine("Write your character's name: ");
