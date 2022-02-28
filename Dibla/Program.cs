@@ -208,8 +208,20 @@ namespace Dibla
         }
         class StartGame
         {
-            public static void startGame(string[] character) { 
-                
+            public static void startGame(string[] character)
+            {
+                string location = character[5];
+                string[] aroundLocation;
+                string[] KelindorfAround = { "Kel's forest", "Abondoned caves" };
+
+                while (true)
+                {
+                    switch (location)
+                    {
+                        case "Kalindorf":
+                            break;
+                    }
+                }
             }
         }
         static void yesno()
@@ -219,6 +231,7 @@ namespace Dibla
         }
         static void Main(string[] args)
         {
+            string location;
             string[] character;
             string difficulty;
             int otvet;
@@ -277,19 +290,30 @@ namespace Dibla
                             difficulty = "";
                             break;
                     }
+
                     string filename = Name + ".txt";
                     StreamWriter sw = new StreamWriter(filename);
-                    sw.WriteLine(Name + " " + Side + " " + Race + " " + Class + " " + difficulty);
+                    if (Side == "Radiant")
+                    {
+                        location = "Kelindorf";
+                    }
+                    else
+                    {
+                        location = "Merkland";
+                    }
+                    sw.WriteLine(Name + " " + Side + " " + Race + " " + Class + " " + difficulty + " " + location);
                     sw.Close();
                     Console.WriteLine("Character {0} has been created", Name);
                     StreamReader sr1 = new StreamReader(filename);
                     string line1 = sr1.ReadLine();
                     character = line1.Split(' ');
-                    sr1.Close();\
+                    sr1.Close();
+
                     Console.WriteLine("Start game?");
                     yesno();
-                    otvet = selectAction(1,2);
-                    switch (otvet) {
+                    otvet = selectAction(1, 2);
+                    switch (otvet)
+                    {
                         case 1:
                             StartGame.startGame(character);
                             break;
