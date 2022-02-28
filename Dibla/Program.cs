@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace Dibla
 {
@@ -202,7 +203,7 @@ namespace Dibla
         static void Main(string[] args)
         {
             int otvet;
-            string Side;
+            string Side = "";
             string Class;
             string Race;
             string Name;
@@ -240,6 +241,11 @@ namespace Dibla
                     Class = RaceClass[1];
                     Console.Write("Enter yours character name: ");
                     Name = Console.ReadLine();
+                    string filename = Name + ".txt";
+                    StreamWriter sw = new StreamWriter(filename);
+                    sw.WriteLine(Name + " " + Side + " " + Race + " " + Class);
+                    sw.Close();
+                    Console.WriteLine("Character {0} has been created", Name);
                     break;
                 case 2:
                     Console.WriteLine("2");

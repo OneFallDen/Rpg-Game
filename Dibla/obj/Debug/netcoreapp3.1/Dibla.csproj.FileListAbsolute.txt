@@ -11,3 +11,17 @@ D:\Projects\C#\TryToLearn\Dibla\Dibla\obj\Debug\netcoreapp3.1\Dibla.csproj.CoreC
 D:\Projects\C#\TryToLearn\Dibla\Dibla\obj\Debug\netcoreapp3.1\Dibla.dll
 D:\Projects\C#\TryToLearn\Dibla\Dibla\obj\Debug\netcoreapp3.1\Dibla.pdb
 D:\Projects\C#\TryToLearn\Dibla\Dibla\obj\Debug\netcoreapp3.1\Dibla.genruntimeconfig.cache
+C:\Projects\C#\TryToLearn\Dibla\Dibla\bin\Debug\netcoreapp3.1\Dibla.exe
+C:\Projects\C#\TryToLearn\Dibla\Dibla\bin\Debug\netcoreapp3.1\Dibla.deps.json
+C:\Projects\C#\TryToLearn\Dibla\Dibla\bin\Debug\netcoreapp3.1\Dibla.runtimeconfig.json
+C:\Projects\C#\TryToLearn\Dibla\Dibla\bin\Debug\netcoreapp3.1\Dibla.runtimeconfig.dev.json
+C:\Projects\C#\TryToLearn\Dibla\Dibla\bin\Debug\netcoreapp3.1\Dibla.dll
+C:\Projects\C#\TryToLearn\Dibla\Dibla\bin\Debug\netcoreapp3.1\Dibla.pdb
+C:\Projects\C#\TryToLearn\Dibla\Dibla\obj\Debug\netcoreapp3.1\Dibla.csproj.AssemblyReference.cache
+C:\Projects\C#\TryToLearn\Dibla\Dibla\obj\Debug\netcoreapp3.1\Dibla.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\C#\TryToLearn\Dibla\Dibla\obj\Debug\netcoreapp3.1\Dibla.AssemblyInfoInputs.cache
+C:\Projects\C#\TryToLearn\Dibla\Dibla\obj\Debug\netcoreapp3.1\Dibla.AssemblyInfo.cs
+C:\Projects\C#\TryToLearn\Dibla\Dibla\obj\Debug\netcoreapp3.1\Dibla.csproj.CoreCompileInputs.cache
+C:\Projects\C#\TryToLearn\Dibla\Dibla\obj\Debug\netcoreapp3.1\Dibla.dll
+C:\Projects\C#\TryToLearn\Dibla\Dibla\obj\Debug\netcoreapp3.1\Dibla.pdb
+C:\Projects\C#\TryToLearn\Dibla\Dibla\obj\Debug\netcoreapp3.1\Dibla.genruntimeconfig.cache
