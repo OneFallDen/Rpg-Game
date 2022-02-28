@@ -208,17 +208,74 @@ namespace Dibla
         }
         class StartGame
         {
+            static string Kelindorf(string[] KelindorfAround, string location)
+            {
+                int otvet, x;
+                city();
+                otvet = selectAction(1, 6);
+                switch (otvet)
+                {
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                    case 5:
+                        break;
+                    case 6:
+                        x = aroundLocations(KelindorfAround);
+                        otvet = selectAction(1, x);
+                        switch (KelindorfAround[otvet - 1])
+                        {
+                            case "Kel's forest":
+                                location = "Kel's forest";
+                                break;
+                            case "Abondoned caves":
+                                location = "Abondoned caves";
+                                break;
+                        }
+                        break;
+                }
+                return location;
+            }
+            static int aroundLocations(string[] aroundLocations)
+            {
+                int lenght = aroundLocations.Length;
+                for (int i = 0; i < lenght; i++)
+                {
+                    Console.WriteLine("{0}.{1}", (i+1), aroundLocations[i]);
+                }
+                return lenght;
+            }
+            static void city()
+            {
+                Console.WriteLine("1.Blacksmith");
+                Console.WriteLine("2.Wizard");
+                Console.WriteLine("3.Alchemy");
+                Console.WriteLine("4.Merchant");
+                Console.WriteLine("5.Guild");
+                Console.WriteLine("6.Gates");
+            }
             public static void startGame(string[] character)
             {
                 string location = character[5];
+                int otvet;
+                int x;
                 string[] aroundLocation;
                 string[] KelindorfAround = { "Kel's forest", "Abondoned caves" };
+                string[] monsters = { "Cobold", "Wolf" };
 
                 while (true)
                 {
+                    Console.WriteLine();
+                    Console.WriteLine("You now in {0}", location);
                     switch (location)
                     {
-                        case "Kalindorf":
+                        case "Kelindorf":
+                            location = Kelindorf(KelindorfAround, location);
                             break;
                     }
                 }
@@ -329,6 +386,7 @@ namespace Dibla
                     string line = sr.ReadLine();
                     character = line.Split(' ');
                     sr.Close();
+                    StartGame.startGame(character);
                     break;
                 case 3:
                     Console.WriteLine("3");
