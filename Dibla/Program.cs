@@ -68,6 +68,74 @@ namespace Dibla
                 Console.WriteLine("4.Gnom");
                 Console.WriteLine("5.Dreney");
             }
+            public static int[] raceStats(int[] stats, string race)
+            {
+                switch (race)
+                {
+                    case "Human":
+                        stats[0] = 20;
+                        stats[1] = 20;
+                        stats[2] = 20;
+                        stats[3] = 20;
+                        break;
+                    case "Dwarf":
+                        stats[0] = 25;
+                        stats[1] = 16;
+                        stats[2] = 21;
+                        stats[3] = 19;
+                        break;
+                    case "NightElf":
+                        stats[0] = 16;
+                        stats[1] = 24;
+                        stats[2] = 20;
+                        stats[3] = 20;
+                        break;
+                    case "Gnom":
+                        stats[0] = 15;
+                        stats[1] = 22;
+                        stats[2] = 20;
+                        stats[3] = 23;
+                        break;
+                    case "Dreney":
+                        stats[0] = 21;
+                        stats[1] = 17;
+                        stats[2] = 20;
+                        stats[3] = 20;
+                        break;
+
+                    case "Orc":
+                        stats[0] = 23;
+                        stats[1] = 17;
+                        stats[2] = 21;
+                        stats[3] = 17;
+                        break;
+                    case "Undead":
+                        stats[0] = 19;
+                        stats[1] = 18;
+                        stats[2] = 20;
+                        stats[3] = 18;
+                        break;
+                    case "Tauren":
+                        stats[0] = 25;
+                        stats[1] = 16;
+                        stats[2] = 21;
+                        stats[3] = 16;
+                        break;
+                    case "Troll":
+                        stats[0] = 21;
+                        stats[1] = 22;
+                        stats[2] = 20;
+                        stats[3] = 16;
+                        break;
+                    case "BloodElf":
+                        stats[0] = 17;
+                        stats[1] = 22;
+                        stats[2] = 20;
+                        stats[3] = 23;
+                        break;
+                }
+                return stats;
+            }
             public static string choosenRadiantRace(int otvet)
             {
                 string race = "";
@@ -80,7 +148,7 @@ namespace Dibla
                         race = "Dwarf";
                         break;
                     case 3:
-                        race = "Nught Elf";
+                        race = "NightElf";
                         break;
                     case 4:
                         race = "Gnom";
@@ -118,10 +186,77 @@ namespace Dibla
                         race = "Troll";
                         break;
                     case 5:
-                        race = "Blood Elf";
+                        race = "BloodElf";
                         break;
                 }
                 return race;
+            }
+            public static int[] classStats(int[] stats, string Class)
+            {
+                switch (Class)
+                {
+                    case "Priest":
+                        stats[0] = 0;
+                        stats[1] = 0;
+                        stats[2] = 0;
+                        stats[3] = 2;
+                        break;
+                    case "Bandit":
+                        stats[0] = 1;
+                        stats[1] = 3;
+                        stats[2] = 1;
+                        stats[3] = 0;
+                        break;
+                    case "Warrior":
+                        stats[0] = 3;
+                        stats[1] = 0;
+                        stats[2] = 2;
+                        stats[3] = 0;
+                        break;
+                    case "Hunter":
+                        stats[0] = 0;
+                        stats[1] = 3;
+                        stats[2] = 1;
+                        stats[3] = 0;
+                        break;
+                    case "Druid":
+                        stats[0] = 1;
+                        stats[1] = 0;
+                        stats[2] = 0;
+                        stats[3] = 2;
+                        break;
+                    case "Mag":
+                        stats[0] = 0;
+                        stats[1] = 0;
+                        stats[2] = 0;
+                        stats[3] = 3;
+                        break;
+                    case "Shaman":
+                        stats[0] = 1;
+                        stats[1] = 0;
+                        stats[2] = 1;
+                        stats[3] = 1;
+                        break;
+                    case "Warlock":
+                        stats[0] = 0;
+                        stats[1] = 0;
+                        stats[2] = 1;
+                        stats[3] = 2;
+                        break;
+                    case "Paladin":
+                        stats[0] = 2;
+                        stats[1] = 0;
+                        stats[2] = 2;
+                        stats[3] = 0;
+                        break;
+                    case "Deathknight":
+                        stats[0] = 4;
+                        stats[1] = 3;
+                        stats[2] = 3;
+                        stats[3] = 1;
+                        break;
+                }
+                return stats;
             }
             public static void raceClass()
             {
@@ -170,7 +305,7 @@ namespace Dibla
                         Class = "Paladin";
                         break;
                     case 10:
-                        Class = "Death knight";
+                        Class = "Deathknight";
                         break;
                 }
                 return Class;
@@ -368,6 +503,8 @@ namespace Dibla
             string difficulty;
             int otvet;
             string Side = "";
+            int[] stats = { 0, 0, 0, 0 };
+            int[] classStats = { 0, 0, 0, 0 };
             string Class;
             string Race;
             string Name;
@@ -396,11 +533,21 @@ namespace Dibla
                     {
                         case 1:
                             RaceClass = CreatingHero.choosenRadiant().Split(' ');
+                            stats = CreatingHero.raceStats(stats, RaceClass[0]);
+                            classStats = CreatingHero.classStats(classStats, RaceClass[1]);
                             break;
                         case 2:
                             RaceClass = CreatingHero.choosenDire().Split(' ');
+                            stats = CreatingHero.raceStats(stats, RaceClass[0]);
+                            classStats = CreatingHero.classStats(classStats, RaceClass[1]);
                             break;
                     }
+
+                    for (int i = 0; i < 4; i++)
+                    {
+                        stats[i] = stats[i] + classStats[i];
+                    }
+
                     Race = RaceClass[0];
                     Class = RaceClass[1];
                     Console.Write("Enter yours character name: ");
@@ -433,7 +580,8 @@ namespace Dibla
                     {
                         location = "Merkland";
                     }
-                    sw.WriteLine(Name + " " + Side + " " + Race + " " + Class + " " + difficulty + " " + location);
+                    sw.WriteLine(Name + " " + Side + " " + Race + " " + Class + " " + difficulty + " " + location + " " + stats[0] + " " +
+                       stats[1] + " " + stats[2] + " " + stats[3]);
                     sw.Close();
                     Console.WriteLine("Character {0} has been created", Name);
                     StreamReader sr1 = new StreamReader(filename);
